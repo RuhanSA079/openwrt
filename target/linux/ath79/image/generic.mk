@@ -1331,12 +1331,12 @@ define Device/fortinet_fap-321-c
   DEVICE_MODEL := FAP-321-C
   FACTORY_IMG_NAME := FP321C-9.99-AP-build999-999999-patch99
   DEVICE_PACKAGES := ath10k-firmware-qca988x-ct kmod-ath10k-ct
-  IMAGE_SIZE := 20480k
+  IMAGE_SIZE := 20972k
   LOADER_FLASH_OFFS := 0x0040000
   IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | \
 	append-rootfs | pad-rootfs | \
 	check-size | pad-to $$$$(IMAGE_SIZE) | \
-	append-loader-okli-uimage $(1) | pad-to 10944k | \
+	append-loader-okli-uimage $(1) | pad-to 25166k | \
 	gzip-filename $$$$(FACTORY_IMG_NAME)
 endef
 TARGET_DEVICES += fortinet_fap-321-c
