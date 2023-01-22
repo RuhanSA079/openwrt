@@ -153,7 +153,6 @@ mtd_get_mac_text() {
 	fi
 
 	[ $((offset + length)) -le $(mtd_get_part_size "$mtdname") ] || return
-
 	macaddr_canonicalize $(dd bs=1 if="$part" skip="$offset" count="$length" 2>/dev/null)
 }
 

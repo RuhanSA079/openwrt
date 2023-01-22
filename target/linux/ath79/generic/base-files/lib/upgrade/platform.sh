@@ -54,6 +54,7 @@ platform_do_upgrade() {
 		ROOTFS_FILE="root.squashfs"
 		platform_do_upgrade_failsafe_datachk "$1"
 		;;
+	fortinet,fap-321-c|\
 	fortinet,fap-221-b)
 		SKIP_HASH="1"
 		ENV_SCRIPT="/dev/null"

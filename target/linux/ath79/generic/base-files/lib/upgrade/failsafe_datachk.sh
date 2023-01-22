@@ -50,6 +50,7 @@ platform_do_upgrade_failsafe_datachk() {
 	# sysupgrade
 	sleep 2 && sync && echo 3 > /proc/sys/vm/drop_caches
 
+
 	$IMAGE_CMD $KERNEL_FILE | mtd $MTD_ARGS write - ${KERNEL_PART:-kernel}
 
 	sleep 2 && sync && echo 3 > /proc/sys/vm/drop_caches
@@ -59,6 +60,7 @@ platform_do_upgrade_failsafe_datachk() {
 	else
 		$IMAGE_CMD $ROOTFS_FILE | mtd $MTD_ARGS write - ${ROOTFS_PART:-rootfs}
 	fi
+
 
 	sync
 }
